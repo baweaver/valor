@@ -4,7 +4,9 @@ require 'json'
 module Valor
   class Generator
 
-    # Parses raw data to JSON
+    # name           - Name of the base class
+    # raw_data       - Either JSON or a Ruby Hash
+    # save_directory - If specified, will attempt to auto-save generated classes here.
     def initialize(name, raw_data, save_directory = nil)
       @models = {}
       data = raw_data.is_a?(Hash) ? raw_data : JSON.parse(raw_data)
@@ -13,7 +15,8 @@ module Valor
       save_files(save_directory) if save_directory
     end
 
-    def save_files(save_directory)
+    # Saves classes and attributes to individual file classes
+    def save_files(save_directory = Dir.pwd)
       raise "Invalid Directory!" unless File.directory?(save_directory)
 
       @models.each_pair { |klass_name, attributes|
