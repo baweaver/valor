@@ -1,6 +1,8 @@
 # Valor
 
-Take a Ruby Hash and transform it into the makings of a Virtus Model class.
+Take a Ruby Hash and transform it into the makings of a Virtus Model class. 
+
+Check out Virtus if you haven't yet: https://github.com/solnic/virtus
 
 ## How to
 
