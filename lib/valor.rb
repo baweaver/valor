@@ -65,9 +65,12 @@ module Valor
         reduce_hash(value)
       when value.is_a?(Array)
         reduce_array(value)
+      when value.is_a?(Fixnum)
+        'Integer'
+      when value.is_a?(TrueClass) || value.is_a?(FalseClass)
+        'Boolean'
       else 
-        klass = value.class.to_s 
-        klass == 'Fixnum' ? 'Integer' : klass # Compensating for the difference of types
+        value.class.to_s
       end
     end
   end
