@@ -1,5 +1,7 @@
 # Valor
 
+[![Code Climate](https://codeclimate.com/github/baweaver/valor.png)](https://codeclimate.com/github/baweaver/valor)
+
 Take a Ruby Hash and transform it into the makings of a Virtus Model class. 
 
 Check out Virtus if you haven't yet: https://github.com/solnic/virtus
